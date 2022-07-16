@@ -1,0 +1,42 @@
+version: "3"
+
+services:
+    spa:
+        container_name: spa
+        build:
+            context: ./hippotech-react
+        ports:
+          - 3000:3000
+        # mac_address: "02:42:ac:11:00:02"
+        hostname: spa
+        environment:
+            REACT_APP_SERVER_URL: "http://localhost:3001"
+        
+    front:
+        container_name: api-front
+        build:
+            context: ./java-api
+        environment: 
+            APPROVAL_URL: "http://approval:4002"
+            BLOG_URL: "http://blog:4003"
+        ports:
+            - 3001:3001
+
+    # approval:
+    #     container_name: approval
+    #     image: hippotech-approval:latest
+    #     ports:
+    #         - 4002:4002
+
+    # blog:
+    #     container_name: blog
+    #     image: hippotech-blog:latest
+    #     ports:
+    #       - 4003:4003
+    #     environment: 
+    #         MONGO_URL: "mongodb://mongo:27017"
+    #     depends_on: 
+    #       - mongo
+    # mongo:
+    #     container_name: 'mongo'
+    #     image: mongo:4.4.3-bionic
