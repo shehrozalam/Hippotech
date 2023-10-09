@@ -12,10 +12,11 @@ jobs:
     env:
       BRIDGE_POLARIS_SERVERURL: ${{ vars.POLARIS_SERVERURL }}
       BRIDGE_POLARIS_ACCESSTOKEN: ${{ secrets.POLARIS_ACCESSTOKEN }}
-      BRIDGE_POLARIS_ASSESSMENT_TYPES: 'SAST,SCA'
+      BRIDGE_POLARIS_ASSESSMENT_TYPES: 'SCA'
       BRIDGE_POLARIS_APPLICATION_NAME: ${{ github.event.repository.name }}
       BRIDGE_POLARIS_PROJECT_NAME: ${{ github.event.repository.name }}
       BRIDGE_POLARIS_BRANCH_NAME: ${{ github.event.ref_name }}
+      DETECT_DETECTOR_SEARCH_DEPTH: 10
     steps:
     - name: Checkout Source
       uses: actions/checkout@v3
