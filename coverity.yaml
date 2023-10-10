@@ -1,4 +1,4 @@
 capture:
   build:
-    clean-command: ./java-api/mvnw -B clean
-    build-command: ./java-api/mvnw -B -DskipTests package
+    clean-command: ./java-api/mvnw clean
+    build-command: ./java-api/mvnw package
