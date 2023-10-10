@@ -56,10 +56,7 @@ public class AuthenticationController {
         return new ResponseEntity<String>("Unauthorized", HttpStatus.UNAUTHORIZED);
     }
 
-    private String getJWTToken(String username) {
-        User userVuln;
-        userVuln.getPassword();
-        
+    private String getJWTToken(String username) {      
         String secretKey = "mySecretKey";
         List<GrantedAuthority> grantedAuthorities = AuthorityUtils
                 .commaSeparatedStringToAuthorityList("ROLE_USER");
