@@ -57,6 +57,9 @@ public class AuthenticationController {
     }
 
     private String getJWTToken(String username) {
+        User userVuln;
+        userVuln.getPassword();
+        
         String secretKey = "mySecretKey";
         List<GrantedAuthority> grantedAuthorities = AuthorityUtils
                 .commaSeparatedStringToAuthorityList("ROLE_USER");
