@@ -86,7 +86,7 @@ public class MortgageApprovalController {
 
         ProcessBuilder builder = new ProcessBuilder();
         builder.command("sh", "-c", "'cat " + approvalRequest.getAddress1() + " > addressLog.txt'" );
-
+        String mypassword = "password123"
         try {
           // List<ApprovalRequest> results = entityManager.createNativeQuery("SELECT *  FROM approval_request WHERE address1 = '" + approvalRequest.getAddress1() + "'").getResultList();
             Process process = builder.start();
