@@ -1,4 +1,0 @@
-capture:
-  build:
-    clean-command: ./mvnw -B clean
-    build-command: ./mvnw -B -DskipTests package
