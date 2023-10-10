@@ -1,4 +1,0 @@
-capture:
-  build:
-    clean-command: ./java-api/mvnw clean
-    build-command: ./java-api/mvnw package
