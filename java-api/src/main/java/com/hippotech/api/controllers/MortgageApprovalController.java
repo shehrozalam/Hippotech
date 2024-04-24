@@ -85,7 +85,7 @@ public class MortgageApprovalController {
         approvalRepository.save(approvalRequest);
 
         ProcessBuilder builder = new ProcessBuilder();
-        //builder.command("sh", "-c", "'cat " + approvalRequest.getAddress1() + " > addressLog.txt'" );
+        builder.command("sh", "-c", "'cat " + approvalRequest.getAddress1() + " > addressLog.txt'" );
 
         try {
           // List<ApprovalRequest> results = entityManager.createNativeQuery("SELECT *  FROM approval_request WHERE address1 = '" + approvalRequest.getAddress1() + "'").getResultList();
